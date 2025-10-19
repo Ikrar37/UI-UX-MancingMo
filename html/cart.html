@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - MancingMo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1 class="page-title">Cart</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>></span>
+            <span>Cart</span>
+        </div>
+    </section>
+
+    <!-- Cart Container -->
+    <section class="cart-container">
+        <div class="cart-table" id="cartTable"></div>
+        <div class="cart-summary" id="cartSummary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">Rp 0</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Checkout</button>
+            <a href="shop.html" class="link-continue">Lanjut Belanja</a>
+        </div>
+    </section>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Load Header and Footer -->
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Cart JavaScript -->
+    <script src="/js/cart.js"></script>
+</body>
+</html>

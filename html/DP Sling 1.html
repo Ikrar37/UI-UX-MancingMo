@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLING UTECATE - MancingMo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/DP Sling 1.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        <span>Produk berhasil ditambahkan ke keranjang!</span>
+    </div>
+
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-image-container">
+                <div class="main-image-wrapper">
+                    <img src="/image/Sling 1.jpeg" alt="SLING UTECATE" id="mainImage">
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="selectImage(0)">
+                        <img src="/image/Sling 1.jpeg" alt="Foto 1">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1 id="productName">SLING UTECATE 10 METER / Sling Utecate</h1>
+                
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-text">(0) | 0 Terjual</span>
+                </div>
+                
+                <div class="price" id="productPrice">Rp 12.500 - Rp 45.000</div>
+                
+                <div class="delivery-info">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                    </svg>
+                    Estimasi pengiriman: 15 Sep - 20 Sep 2025
+                </div>
+                
+                <div class="size-options">
+                    <h3>Type</h3>
+                    <div class="type-grid">
+                        <button class="type-btn" data-type="1x7">1x7</button>
+                        <button class="type-btn" data-type="7x7">7x7</button>
+                    </div>
+                </div>
+
+                <div class="size-options">
+                    <h3>Ukuran</h3>
+                    <div class="size-grid">
+                        <button class="size-btn" data-size="5Lb">5Lb</button>
+                        <button class="size-btn" data-size="10Lb">10Lb</button>
+                        <button class="size-btn" data-size="15Lb">15Lb</button>
+                        <button class="size-btn" data-size="20Lb">20Lb</button>
+                        <button class="size-btn" data-size="25Lb">25Lb</button>
+                        <button class="size-btn" data-size="30Lb">30Lb</button>
+                        <button class="size-btn" data-size="40Lb">40Lb</button>
+                        <button class="size-btn" data-size="50Lb">50Lb</button>
+                        <button class="size-btn" data-size="60Lb">60Lb</button>
+                        <button class="size-btn" data-size="80Lb">80Lb</button>
+                        <button class="size-btn" data-size="100Lb">100Lb</button>
+                    </div>
+                </div>
+                
+                <div class="quantity-section">
+                    <h3>Jumlah</h3>
+                    <div class="quantity-control">
+                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                        <input type="number" value="1" min="1" class="qty-input" id="qty-input">
+                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-cart" onclick="addToCart()">Tambah ke Keranjang</button>
+                    <button class="btn btn-buy" onclick="buyNow()">Beli Sekarang</button>
+                </div>
+                
+                <div class="product-actions">
+                    <div class="action-link">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Ask a question
+                    </div>
+                    <div class="action-link">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                        </svg>
+                        Share
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Details Table -->
+        <div class="detail-section">
+            <h2>Rincian Produk</h2>
+            <table class="detail-table">
+                <tr>
+                    <td>Stok</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Merek</td>
+                    <td>Utecate</td>
+                </tr>
+                <tr>
+                    <td>Negara Asal</td>
+                    <td>Indonesia</td>
+                </tr>
+                <tr>
+                    <td>Dikirim Dari</td>
+                    <td>Kota Makassar</td>
+                </tr>
+                <tr>
+                    <td>Kategori</td>
+                    <td><a href="shop.html">Aksesoris Pancing</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Product Description -->
+        <div class="detail-section">
+            <h2>Deskripsi Produk</h2>
+            <div class="description-content">
+                <p><strong>SLING UTECATE 10 METER</strong></p>
+                
+                <p>Utecate Stainless Steel Wire adalah kawat pancing berbahan stainless steel yang kuat, lentur, dan tahan karat. Dirancang khusus untuk menghadapi ikan predator, kawat ini tetap fleksibel namun memiliki kekuatan tarik tinggi.</p>
+                
+                <p><strong>Tipe Tersedia:</strong></p>
+                <ul class="description-list">
+                    <li><strong>1x7</strong> - Kaku (cocok untuk jigging & trolling)</li>
+                    <li><strong>7x7</strong> - Lentur (cocok untuk casting & mancing ringan)</li>
+                </ul>
+                
+                <p><strong>Fitur Utama:</strong></p>
+                <ul class="description-list">
+                    <li>Material: Stainless Steel (kuat & tahan lama)</li>
+                    <li>Desain: Clear Uncoated, Stronger, Softer, Flexible</li>
+                    <li>Panjang: 10 meter per pack</li>
+                    <li>Tersedia tipe 1x7 strands & 7x7 strands</li>
+                    <li>Kekuatan tarik mulai dari 5 lb – 100 lb</li>
+                    <li>Diameter kawat: 0.45 mm – 0.72 mm</li>
+                    <li>Sudah termasuk clamp</li>
+                </ul>
+                
+                <p>Ideal untuk pemancing predator yang butuh kawat kuat, aman, dan anti karat.</p>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="related-products">
+            <h2 class="section-title">Related Product</h2>
+            <div class="product-grid">
+                <div class="product-card" onclick="window.location.href='DP Swivel 1.html'">
+                    <div class="product-image">
+                        <img src="/image/Swivel 1.jpeg" alt="Swivel Kazurri">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-name">Swivel Rolling Kazurri Model Rolling Black</div>
+                        <div class="product-brand">Aksesori</div>
+                        <div class="product-price">Rp 5.000</div>
+                    </div>
+                </div>
+                
+                <div class="product-card" onclick="window.location.href='DP Senar 1.html'">
+                    <div class="product-image">
+                        <img src="/image/Senar 1:1.jpeg" alt="Senar PE Tiger">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-name">PE TIGER X8 – Braided Fishing Line 100M</div>
+                        <div class="product-brand">Senar</div>
+                        <div class="product-price">Rp 30.000</div>
+                    </div>
+                </div>
+                
+                <div class="product-card" onclick="window.location.href='DP Kail 1.html'">
+                    <div class="product-image">
+                        <img src="image/Kail 1:1.jpeg" alt="Kail Hammerhead">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-name">Mata Pancing Hammerhead 1920-SS</div>
+                        <div class="product-brand">Kail</div>
+                        <div class="product-price">Rp 19.000</div>
+                    </div>
+                </div>
+                
+                <div class="product-card" onclick="window.location.href='DP Umpan 1.html'">
+                    <div class="product-image">
+                        <img src="image/Umpan 1:1.jpeg" alt="Umpan Sontong">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-name">[7cm isi 5pcs] Umpan Karet Sontong Tornado</div>
+                        <div class="product-brand">Umpan</div>
+                        <div class="product-price">Rp 37.500</div>
+                    </div>
+                </div>
+            </div>
+            <button class="show-more-btn" onclick="window.location.href='shop.html'">Show More</button>
+        </div>
+    </div>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Load Header and Footer -->
+    <script>
+        // Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Product Detail JavaScript -->
+    <script src="/js/DP Sling 1.js"></script>
+</body>
+</html>
